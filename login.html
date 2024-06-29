@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="AIlogo.jpg" type="image/icon type"> 
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main">
+        <form>
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Email ID" required>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="forgot">
+                <p>Forgot Password?</p>
+            </div>
+            <button type="submit" class="button">Login</button>
+            <div class="Signup">
+                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+            </div>
+        </form>
+    </div>
+    <script type="module" src="firebase-setup.js"></script>
+    <script type="module"> 
+        import { auth, signInWithEmailAndPassword, sendPasswordResetEmail } from './firebase-setup.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.querySelector("form");
+            const emailInput = loginForm.querySelector("input[type='text']");
+            loginForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const email = emailInput.value;
+                const password = loginForm.querySelector("input[type='password']").value;
+                try {
+                    await signInWithEmailAndPassword(auth, email, password);
+                    window.location.href = "chatbot.html";
+                } catch (error) {
+                    alert("Failed to login: " + error.message);
+                }
+            });
+            const forgotPassword = document.querySelector(".forgot");
+            forgotPassword.addEventListener("click", async (e) => {
+                e.preventDefault();
+                const email = emailInput.value;
+                if (email) {
+                    try {
+                        await sendPasswordResetEmail(auth, email);
+                        alert("Password reset email sent!");
+                    } catch (error) {
+                        alert("Error: " + error.message);
+                    }
+                } else {
+                    alert("Please enter your email address first.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

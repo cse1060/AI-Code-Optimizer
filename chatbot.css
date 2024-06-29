@@ -1,0 +1,178 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #062054; 
+}
+
+.navbar{
+    height: 85px;
+    border-radius: 10px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar .nav-image{
+    height: 45px;
+    width: 45px;
+    border:none;
+    outline: none;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-image: url("AIlogo.jpg");
+    background-size: cover;
+    background-position: center;
+    margin: 0px 10px 0px 10px;
+}
+
+.navbar p{
+    font-size: 26px;
+    font-weight: 600;
+    color: white;
+}
+
+.navbar .menu{
+    height: 40px;
+    width:40px;
+    font-size: 26px;
+    position: absolute;
+    right: 15px;
+    margin-top: 12px;
+    color: #e2e7e6;
+    cursor: pointer;
+}
+
+.sub-menu{
+    height: 30vh;
+    width: 20vw;
+    position: absolute;
+    right: 5%;
+    top: 5vh;
+    border-radius: 10px;
+    background-color: #333333;
+    cursor: pointer;
+}
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    height: 30%;
+    color: #e2e7e6;
+    padding-left: 10px;
+}
+
+ .hide{
+    display:none;
+} 
+
+.profile-img,.history-img,.logout-img{
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-img{
+    border-radius: 50%; 
+    border:2px solid #e2e7e6;
+}
+
+.profile p, .history p, .logout p{
+    font-size: 1rem;
+    color: white;
+    padding-left: 10px;
+    font-weight: 550;
+}
+
+.logout p:hover,.history p:hover{
+    color:rgba(255, 255, 255, 0.543);
+}
+
+ .chatbot-area .info {
+    color : white;
+    font-family: cursive;
+    font-size : 25px;
+    padding-top : 15px;
+    padding-left: 10px;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        height: 75px;
+    }
+
+    .navbar p {
+        font-size: 23px;
+    }
+
+    .navbar .nav-image {
+        height: 42px;
+        width: 42px;
+    }
+
+    .navbar .menu {
+        font-size: 24px;
+        margin-top: 12px;
+    }
+
+    .sub-menu {
+        width: 35vw;
+    }
+
+    .sub-menu-link {
+        font-size: 1.2rem;
+    } 
+
+    .profile p, .history p, .logout p{
+        font-size: 1rem;
+    }
+    
+    .chatbot-area .info {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        height: 70px;
+    }
+
+    .navbar p {
+        font-size: 19px;
+    }
+
+    .navbar .nav-image {
+        height: 38px;
+        width: 38px;
+    }
+
+    .navbar .menu {
+        font-size: 22px;
+        margin-top: 15px;
+    } 
+
+    .sub-menu {
+        width: 45vw;
+    } 
+
+    .sub-menu-link {
+        font-size: 0.8rem;
+    }
+
+    .profile p, .history p, .logout p{
+        font-size: 0.9rem;
+    }
+    
+    .chatbot-area .info {
+        font-size: 16px;
+    }
+}
