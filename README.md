@@ -39,11 +39,10 @@ Developers can customize coding style guidelines and rules to align with project
 3. **Input Code**: Paste or type code snippets directly into the chatbot for analysis.
 4. **Receive Feedback**: Instantly receive detailed feedback, bug reports, improvement suggestions, and performance optimization tips.
 
-## Future of this website will have
+## Possible Improvements the website can have
 
 - **History Tracking**: Implementing a feature to track and review previous code interactions.
 - **User Profiles**: Introduce user profiles with customizable avatars and preferences.
-- **Theme Options**: Support light and dark themes for user interface customization.
 - **Chat Export**: Allow users to download and share chat transcripts for documentation purposes.
 - **Full-Screen Mode**: Enable a full-screen option for immersive code review sessions.
 
